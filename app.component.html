@@ -1,0 +1,25 @@
+<div class ="container -fluid">
+  <h1>BIO DATA FORM</h1>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()"novalidate >
+    <div class="form-group" >
+      <label>FIRST NAME </label>
+      <input type="text" [(ngModel)]="userModel.userfirstname" name="userfirstname" class="form-control">
+    </div>
+    <div class="form-group">
+      <label> LAST NAME</label>
+      <input type="text" [(ngModel)]="userModel.userlastname" name="userlastname" class="form-control">
+    </div>
+    <div class="form-group">
+      <select class="custom-select" name="subject" [(ngModel)]="userModel.subject">
+        <option value="">choose the gender</option>
+        <option *ngFor="let subject of subjects">{{ subject }}</option>
+      </select>
+    </div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" name="subscribe" [(ngModel)]="userModel.subscribe" type="checkbox">
+      <label class="form-check-label">all the data correct</label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+
+  </form>
+</div>
